@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api";
+export const API_URL = `https://scalable-chat-app-qcq3.onrender.com/api`;
 
 export const fetchUser = (userId) => axios.get(`${API_URL}/user/${userId}`);
 export const fetchSessions = () => axios.get(`${API_URL}/chatSession`);

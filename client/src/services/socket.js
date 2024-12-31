@@ -1,7 +1,8 @@
 import io from "socket.io-client";
 import { SOCKET_EVENTS } from "../utils/constants";
 
-const socket = io("http://localhost:8000"); // Update to the new messaging server URL
+// const socket = io("http://localhost:8000"); // Update to the new messaging server URL
+const socket = io("https://scalable-chat-app-qcq3.onrender.com");
 
 export const joinRoom = (sessionId) => {
   socket.emit(SOCKET_EVENTS.JOIN_ROOM, { sessionId });

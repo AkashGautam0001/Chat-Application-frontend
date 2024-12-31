@@ -11,7 +11,10 @@ const LoginPage = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/user");
+        // const response = await axios.get("http://localhost:8080/api/user");
+        const response = await axios.get(
+          "https://scalable-chat-app-qcq3.onrender.com/api/user"
+        );
         if (response.status === 200) {
           setUsers(response.data.users);
         }
@@ -26,8 +29,11 @@ const LoginPage = () => {
   const handleLogin = async () => {
     try {
       if (userId.trim()) {
+        // const response = await axios.get(
+        //   `http://localhost:8080/api/user/${userId}`
+        // );
         const response = await axios.get(
-          `http://localhost:8080/api/user/${userId}`
+          `https://scalable-chat-app-qcq3.onrender.com/api/user/${userId}`
         );
         console.log(response);
         if (response.status === 200) {

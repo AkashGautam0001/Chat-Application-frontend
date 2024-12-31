@@ -11,8 +11,11 @@ const FetchUser = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
+        // const response = await axios.get(
+        //   `http://localhost:8080/api/user/${userID}`
+        // );
         const response = await axios.get(
-          `http://localhost:8080/api/user/${userID}`
+          `https://scalable-chat-app-qcq3.onrender.com/api/user/${userID}`
         );
         console.log(response.data.user);
         setUser(response.data.user);

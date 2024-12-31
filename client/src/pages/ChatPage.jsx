@@ -27,7 +27,10 @@ const ChatPage = () => {
 
   const fetchSessions = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/chatSession");
+      // const response = await axios.get("http://localhost:8080/api/chatSession");
+      const response = await axios.get(
+        `https://scalable-chat-app-qcq3.onrender.com/api/chatSession`
+      );
       setSessions(response.data.sessions);
     } catch (err) {
       console.error("Error fetching sessions:", err);
