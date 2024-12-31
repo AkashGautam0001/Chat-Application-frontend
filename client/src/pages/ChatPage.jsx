@@ -43,6 +43,16 @@ const ChatPage = () => {
     }
     setCurrentSessionId(sessionId);
     joinRoom(sessionId);
+
+    try {
+      const joinSession = await axios.post(
+        `https://scalable-chat-app-qcq3.onrender.com/api/chatSession/${sessionId}/join`,
+        { userId }
+      );
+      console.log("Joined room:", joinSession.data);
+    } catch (error) {
+      console.error("Error joining room:", error);
+    }
   };
 
   return (
